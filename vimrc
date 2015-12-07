@@ -10,10 +10,10 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree.git'
+Plugin 'The-NERD-Commenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'taglist.vim'
 Plugin 'winmanager'
-Plugin 'python_fold'
 Plugin 'bufexplorer.zip'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'elzr/vim-json'
@@ -21,9 +21,11 @@ Plugin 'Lokaltog/vim-powerline.git'
 Plugin 'vim-colors-solarized' 
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'Syntastic'
-Plugin 'The-NERD-Commenter'
 Plugin 'EasyMotion'
 Plugin 'vim-jsbeautify'
+Plugin 'pyflakes.vim'
+Plugin 'javascript.vim'
+Plugin 'python_fold'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,13 +59,26 @@ set hlsearch
 
 " Configuration hotkey for vim
 let mapleader=";"
-nmap lw 0
-nmap le $
+nmap e0 $
 nmap <Leader>w :w<CR>
 nmap <Leader>x :x<CR>
 vmap <Leader>y :w !pbcopy<CR><CR> 
 nmap <Leader>p :r !pbpaste<CR><CR> 
 xnoremap p pgvy
+nmap <space> :
+nmap <C-n> :nohl<CR>
+nmap <Leader>h <C-w>h
+nmap <Leader>j <C-w>j
+nmap <Leader>k <C-w>k
+nmap <Leader>l <C-w>l
+
+" ========== javascript ==========
+setlocal foldlevel=4
+" 打开javascript折叠
+let javaScript_fold=1 
+
+" 打开javascript对dom、html和css的支持
+let javascript_enable_domhtmlcss=1
 
 " ========== python ==========
 set filetype=python
