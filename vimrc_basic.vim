@@ -17,16 +17,13 @@ set encoding    =utf-8
 set backspace   =2       " more powerful backspacing
 set mouse       =a       " open mouse on macos
 set clipboard   =unnamed " use system clipboard
+set autoindent           " same level indent
+set smartindent          " next level indent
+set exrc                 " enable project specified vimrc
 
-set autoindent  " same level indent
-set smartindent " next level indent
+let mapleader= ";"       " set leader key for map
 
-set foldenable
-set foldmethod=marker
-set foldmethod=syntax
-
-let mapleader=";"
-
+autocmd WinEnter * if &previewwindow | setlocal wrap linebreak nolist | endif " wrap on preview
 
 " Performance
 
@@ -57,6 +54,26 @@ set sidescroll =1          " smooth horizontal scroll
 set cursorline             " indicate line
 set cursorcolumn           " indicate column
 
+" Folding
+set foldenable
+set foldmethod =syntax
+set foldlevel  =1
+
+hi Folded term=bold cterm=None
+
+function! NeatFoldText()
+    let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+    let lines_count = v:foldend - v:foldstart + 1
+    let lines_count_text = printf("%9s", lines_count . ' lines')
+    let foldchar = matchstr(&fillchars, 'fold:\zs.')
+    let foldtextstart = strpart('+' . repeat(' ', (v:foldlevel-1)*4 - 2) . line, 0, (winwidth(0)*2)/3)
+    let foldtextend = lines_count_text . repeat(' ', 5)
+    let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+    return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+
+set foldtext=NeatFoldText()
+
 " SSH
 
 set ttyfast " TODO
@@ -68,11 +85,12 @@ set spelllang =en_us,cjk " spell check
 
 " Tab
 
-set wildmenu       " open table completer
-set expandtab      " use some spaces to insert <Tab>.
-set tabstop     =4 " ts: how many of spaces in a <Tab>
-set shiftwidth  =4 " sw: how many spaces to use for indent
-set softtabstop =4 " sts: ts, but mimic with space
+set wildmenu                  " open table completer
+set wildmode    =longest,full " open table completer
+set tabstop     =4            " ts: how many of spaces in a <Tab>
+set shiftwidth  =4            " sw: how many spaces to use for indent
+set softtabstop =4            " sts: ts, but mimic with space
+set expandtab                 " use some spaces to insert <Tab>.
 
 " Configuration gui for vim
 " set guicursor  =a:block-blinkon1000 "

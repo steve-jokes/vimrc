@@ -13,4 +13,4 @@ function! NERDTree_IsValid()
 endfunction
 
 " 自动退出 Win-manager
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree"))  | qa | endif
+autocmd bufenter * if (winnr("$") == 2 && exists("b:NERDTree"))  | qa | endif

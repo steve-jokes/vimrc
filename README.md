@@ -10,6 +10,6 @@ git add remote stevejokes git@github.com:steve-jokes/vimrc.git
 git pull stevejokes master
 ln -s ~/.vim/vimrc ~/.vimrc
 
-vim 
+vim
 :BundleInstall
 ```

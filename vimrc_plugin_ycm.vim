@@ -28,21 +28,23 @@ let g:ycm_key_list_previous_completion=['<c-p>']
 " let g:ycm_server_python_interpreter='/usr/local/Cellar/python3/3.7.0/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
 " let g:ycm_server_python_interpreter='/usr/bin/python2'
 
+let g:ycm_max_diagnostics_to_display = 200 " 太小会引起无法显示
+
 let g:ycm_confirm_extra_conf=1 
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " 在注释输入中也能补全
 let g:ycm_complete_in_comments = 1
 " 在字符串输入中也能补全
-let g:ycm_complete_in_strings = 1 
+let g:ycm_complete_in_strings = 1
 
 let g:ycm_collect_identifiers_from_tags_files=1 " 开启 YCM 基于标签引擎
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释和字符串中的文字也会被收入补全
 
 "语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
-let g:ycm_seed_identifiers_with_syntax=1   
+let g:ycm_seed_identifiers_with_syntax=1
 
-let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files =1
 "
 " 从第2个键入字符就开始罗列匹配项
 let g:ycm_min_num_of_chars_for_completion=2
@@ -50,7 +52,8 @@ let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-set splitbelow
+
+" set splitbelow " show preivew below
 
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
 " new version
@@ -66,14 +69,10 @@ set splitbelow
 
 " mapping
 nmap <leader>gd :YcmDiags<CR>
-" 跳转到申明处
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-" 跳转到定义处
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-" 跳跳
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" Apply YCM FixIt
-map <leader>ff :YcmCompleter FixIt<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>               " 跳转到申明处
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>                " 跳转到定义处
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR> " 左右横跳
+map <leader>ff :YcmCompleter FixIt<CR>                              " Apply YCM FixIt
 
 
 " let g:ycm_python_binary_path = '/usr/bin/python3'

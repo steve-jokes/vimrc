@@ -14,7 +14,7 @@ Plugin 'The-NERD-Commenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 " Plugin 'jodosha/vim-godebug'
-Plugin 'winmanager'
+" Plugin 'winmanager'
 Plugin 'bufexplorer.zip'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -39,6 +39,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'tomlion/vim-solidity'
 Plugin 'ybian/smartim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rizzatti/dash.vim'
 
 Plugin 'HerringtonDarkholme/yats'
 Plugin 'iamcco/dict.vim'
@@ -57,10 +58,14 @@ source ~/.vim/vimrc_plugin_nerd-tree.vim
 source ~/.vim/vimrc_plugin_nerd-commenter.vim
 source ~/.vim/vimrc_plugin_ctrl-p.vim
 source ~/.vim/vimrc_plugin_tagbar.vim
-source ~/.vim/vimrc_plugin_win-manager.vim
+" source ~/.vim/vimrc_plugin_win-manager.vim
 source ~/.vim/vimrc_plugin_ycm.vim
 
-" open tagbar and wmtoggle
-autocmd VimEnter * WMToggle
+" open layout
 autocmd VimEnter * TagbarToggle
+autocmd VimEnter * NERDTreeToggle
 
+" 自动退出 Win-manager
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" set secure " prevent autocmd

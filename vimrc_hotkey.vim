@@ -1,4 +1,4 @@
-" Hotkey Configuration 
+" Hotkey Configuration
 
 nmap <Leader>0 $
 nmap <Leader>w :w<CR>
@@ -14,14 +14,8 @@ nmap <Leader><Leader>h <C-w>h
 nmap <Leader><Leader>l <C-w>l
 nmap <Leader><Leader>s :Rgrep<CR>
 
-" ========= json short cut ============
-map <F4> <Esc>:%!python -m json.tool<CR>
-map <F5> <Esc>:w<CR>:GoBuild<CR>
-
-"autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR> " beautiful python code
-"autocmd FileType python nnoremap <Leader>i :!isort %<CR><CR> " rearange python import
-
-" ==========
 nmap <C-b> :BufExplorer<CR>
-nmap <silent><F8> :TagbarToggle<CR>:WMToggle<CR>
-" ==========
+nmap <silent><F8> :NERDTreeToggle<CR>:TagbarToggle<CR><C-I>
+
+" reformat
+nmap <C-l> gg=G
