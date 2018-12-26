@@ -27,3 +27,5 @@ let python_highlight_all = 1
 " rearange python import
 " nnoremap <Leader>i :!isort %<CR><CR>
 
+map <F5> <Esc>:w<CR>:!./%<CR>
+

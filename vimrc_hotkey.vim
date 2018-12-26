@@ -18,4 +18,4 @@ nmap <C-b> :BufExplorer<CR>
 nmap <silent><F8> :NERDTreeToggle<CR>:TagbarToggle<CR><C-I>
 
 " reformat
-nmap <C-l> gg=G
+nmap <C-l> mpgg=G`p
