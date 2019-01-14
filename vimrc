@@ -6,15 +6,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'The-NERD-Commenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 " Plugin 'jodosha/vim-godebug'
-" Plugin 'winmanager'
 Plugin 'bufexplorer.zip'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -31,7 +30,6 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'mileszs/ack.vim'
 Plugin 'yegappan/grep'
-Plugin 'wakatime/vim-wakatime'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'python_fold'
@@ -60,9 +58,10 @@ source ~/.vim/vimrc_plugin_ctrl-p.vim
 source ~/.vim/vimrc_plugin_tagbar.vim
 " source ~/.vim/vimrc_plugin_win-manager.vim
 source ~/.vim/vimrc_plugin_ycm.vim
+source ~/.vim/vimrc_plugin_complete-parameter.vim
 
 " open layout
-autocmd VimEnter * TagbarToggle
+" autocmd VimEnter * TagbarToggle
 autocmd VimEnter * NERDTreeToggle
 
 " 自动退出 Win-manager

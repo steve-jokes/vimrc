@@ -113,3 +113,11 @@ appender
 stdout
 apache
 xh
+decrypt
+RSA
+privKey
+str
+batchId
+sql
+func
+greenplum
