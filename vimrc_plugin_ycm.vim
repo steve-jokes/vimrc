@@ -21,8 +21,8 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " youcompleteme  默认tab and shift-tab 和自动补全冲突
-let g:ycm_key_list_select_completion=['<c-n>']
-let g:ycm_key_list_previous_completion=['<c-p>']
+let g:ycm_key_list_select_completion=['<C-I>']
+let g:ycm_key_list_previous_completion=['<C-P>']
 " let g:ycm_key_list_select_completion = ['<Down>']
 " let g:ycm_key_list_previous_completion = ['<Up>']
 " let g:ycm_server_python_interpreter='/usr/local/Cellar/python3/3.7.0/Frameworks/Python.framework/Versions/3.7/bin/python3.7'

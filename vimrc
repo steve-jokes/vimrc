@@ -13,7 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'The-NERD-Commenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
-" Plugin 'jodosha/vim-godebug'
+Plugin 'vim-scripts/Conque-GDB'
 Plugin 'bufexplorer.zip'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -22,8 +22,9 @@ Plugin 'elzr/vim-json'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tagbar'
-Plugin 'SuperTab'
+" Plugin 'SuperTab' // TODO: https://github.com/ervandew/supertab
 Plugin 'EasyMotion'
+Plugin 'LargeFile'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tenfyzhong/CompleteParameter.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -35,13 +36,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'python_fold'
 Plugin 'hdima/python-syntax'
 Plugin 'tomlion/vim-solidity'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'ybian/smartim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rizzatti/dash.vim'
 
 Plugin 'HerringtonDarkholme/yats'
 Plugin 'iamcco/dict.vim'
-
+Plugin 'restore_view.vim'
 
 set runtimepath+=$GOROOT/misc/vim
 
@@ -59,6 +61,9 @@ source ~/.vim/vimrc_plugin_tagbar.vim
 " source ~/.vim/vimrc_plugin_win-manager.vim
 source ~/.vim/vimrc_plugin_ycm.vim
 source ~/.vim/vimrc_plugin_complete-parameter.vim
+source ~/.vim/vimrc_plugin_restore-view.vim
+source ~/.vim/vimrc_plugin_autopep8.vim
+" source ~/.vim/vimrc_plugin_conque-gdb.vim
 
 " open layout
 " autocmd VimEnter * TagbarToggle
