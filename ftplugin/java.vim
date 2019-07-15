@@ -1,4 +1,6 @@
 " Java specific settings.
+"
+let g:syntastic_java_checkers = []
 
 function! RunJavaClass()
     let cur_file = expand('%:p:r')

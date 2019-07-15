@@ -1,4 +1,5 @@
-" Tagbar
-
-let g:tagbar_show_linenumbers = 1
+" Git Gutter
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterUndoHunk
 

@@ -33,7 +33,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'yegappan/grep'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
-Plugin 'python_fold'
+" Plugin 'python_fold'
 Plugin 'hdima/python-syntax'
 Plugin 'tomlion/vim-solidity'
 Plugin 'tell-k/vim-autopep8'
@@ -54,6 +54,7 @@ filetype plugin indent on    " required
 source ~/.vim/vimrc_basic.vim
 source ~/.vim/vimrc_hotkey.vim
 source ~/.vim/vimrc_plugin_youdao-dict.vim
+source ~/.vim/vimrc_plugin_git-gutter.vim
 source ~/.vim/vimrc_plugin_nerd-tree.vim
 source ~/.vim/vimrc_plugin_nerd-commenter.vim
 source ~/.vim/vimrc_plugin_ctrl-p.vim
