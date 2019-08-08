@@ -26,14 +26,39 @@ nmap <C-l> mpgg=G`p
 
 nmap <F3> :call Console()<CR>
 
-function! EscapeText()
-    execute('%!' . 'python -c ' . "'" . 'import sys, jsonfor line in sys.stdin: print(line.replace("\\", "\\\\").replace("\"", "\\\""), end="")' . "'")
+function! EscapeAll()
+    execute('%!' . 'python /Users/memphisw/.vim/python_tools/escape_text.py')
 endfunction
 
-function! UnEscapeText()
-    execute('%!' . 'python -c ' . "'" . 'import sys, jsonfor line in sys.stdin: print(line.replace("\\\"", "\"").replace("\\\\", "\\"), end="")' . "'")
+function! EscapeLine()
+    execute('.!' . 'python /Users/memphisw/.vim/python_tools/escape_text.py')
+endfunction
+
+function! UnEscapeAll()
+    execute('%!' . 'python /Users/memphisw/.vim/python_tools/unescape_text.py')
+endfunction
+
+function! UnEscapeLine()
+    execute('.!' . 'python /Users/memphisw/.vim/python_tools/unescape_text.py')
+endfunction
+
+function! FormatErrorAll()
+    execute('%!' . 'python /Users/memphisw/.vim/python_tools/format_error.py')
+endfunction
+
+function! FormatErrorLine()
+    execute('.!' . 'python /Users/memphisw/.vim/python_tools/format_error.py')
 endfunction
 
 function! Console()
     execute('below terminal zsh')
+    " execute(':set termwinsize=100*1000')
+endfunction
+
+function! JsonAll()
+    execute('%!python -m json.tool')
+endfunction
+
+function! JsonLine()
+    execute('.!python -m json.tool')
 endfunction

@@ -21,10 +21,11 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " youcompleteme  默认tab and shift-tab 和自动补全冲突
-let g:ycm_key_list_select_completion=['<C-I>']
-let g:ycm_key_list_previous_completion=['<C-P>']
-" let g:ycm_key_list_select_completion = ['<Down>']
-" let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
+
 " let g:ycm_server_python_interpreter='/usr/local/Cellar/python3/3.7.0/Frameworks/Python.framework/Versions/3.7/bin/python3.7'
 " let g:ycm_server_python_interpreter='/usr/bin/python2'
 
@@ -85,5 +86,4 @@ map <leader>ff :YcmCompleter FixIt<CR>
 let g:syntastic_java_checkers = []
 
 " 黑名单,不启用
-let g:ycm_filetype_blacklist = { 'tagbar' : 1, 'gitcommit' : 1, }
-
+let g:ycm_filetype_blacklist = { 'tagbar' : 1, 'gitcommit' : 1, 'go': 1}

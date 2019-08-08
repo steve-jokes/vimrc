@@ -2,6 +2,7 @@
 
 " Go for tagbar
 "
+
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -29,7 +30,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
