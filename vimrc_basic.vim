@@ -4,13 +4,6 @@
 syntax on
 syntax enable
 
-" Look and feel
-colorscheme solarized
-
-let g:solarized_termcolors =256
-let g:solarized_termtrans  =1
-set background             =dark " must invoke last, i don't know why
-
 " Convenience
 
 set encoding    =utf-8
@@ -20,8 +13,6 @@ set clipboard   =unnamed " use system clipboard
 set autoindent           " same level indent
 set smartindent          " next level indent
 set exrc                 " enable project specified vimrc
-
-let mapleader= ";"       " set leader key for map
 
 autocmd WinEnter * if &previewwindow | setlocal wrap linebreak nolist | endif " wrap on preview
 

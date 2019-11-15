@@ -1,0 +1,13 @@
+Plugin 'udalov/kotlin-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tomlion/vim-solidity'
+Plugin 'chr4/nginx.vim'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'thosakwe/vim-flutter'
+Plugin 'natebosch/vim-lsc'
+Plugin 'natebosch/vim-lsc-dart'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'HerringtonDarkholme/yats'
+
+source ~/.vim/vimrc_plugin_vim-lsc.vim
+source ~/.vim/vimrc_plugin_vimpyter.vim

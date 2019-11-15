@@ -1,78 +1,65 @@
-set shell=/bin/bash
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" auto set up vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" list plugins
 
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'The-NERD-Commenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'fatih/vim-go'
-Plugin 'udalov/kotlin-vim'
-Plugin 'vim-scripts/Conque-GDB'
-Plugin 'bufexplorer.zip'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tagbar'
-Plugin 'ervandew/supertab'
-Plugin 'EasyMotion'
-Plugin 'LargeFile'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tenfyzhong/CompleteParameter.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'mileszs/ack.vim'
-Plugin 'yegappan/grep'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
-" Plugin 'python_fold'
-Plugin 'hdima/python-syntax'
-Plugin 'tomlion/vim-solidity'
-Plugin 'tell-k/vim-autopep8'
-Plugin 'ybian/smartim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'rizzatti/dash.vim'
-
-Plugin 'HerringtonDarkholme/yats'
-Plugin 'iamcco/dict.vim'
-Plugin 'restore_view.vim'
-Plugin 'chr4/nginx.vim'
-
-set runtimepath+=$GOROOT/misc/vim
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-" ============= vundle end =====================
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'                                                                   " move buffer to center to get a mind flow
+Plug 'junegunn/limelight.vim'                                                              " TODO take a look at this
+Plug 'junegunn/vim-easy-align'                                                             " quick align
+Plug 'altercation/vim-colors-solarized'                                                    " color scheme
+Plug 'scrooloose/nerdcommenter'                                                            " easy to comment on code
+Plug 'scrooloose/nerdtree'                                                                 " file browser
+Plug 'Xuyuanp/nerdtree-git-plugin'                                                         " nerdtree git plugin
+Plug 'tpope/vim-fugitive'                                                                  " Git wrapper for commit
+Plug 'airblade/vim-gitgutter'                                                              " Git wrapper for undo chunk
+Plug 'kien/ctrlp.vim'                                                                      " <C-P> for file jump
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }                                         " golang tool set
+Plug 'jlanzarotta/bufexplorer'                                                             " switch between buffers
+Plug 'elzr/vim-json'                                                                       " json highlight
+Plug 'vim-airline/vim-airline'                                                             " status line
+Plug 'easymotion/vim-easymotion'                                                           " quick code jump
+Plug 'yegappan/grep'                                                                       " could change into ripgrep
+Plug 'iamcco/dict.vim'                                                                     " youdao dict plugin
+Plug 'vim-syntastic/syntastic'                                                             " static syntax checking
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer' } " code complete
+Plug 'ervandew/supertab'                                                                   " super tab for ins-completion
+Plug 'mikelue/vim-maven-plugin'                                                            " maven
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }                              " auto PEP8
+Plug 'hdima/python-syntax', { 'for': 'python' }                                            " python highlighting enhance TODO test diff
+Plug 'godlygeek/tabular'                                                                   " required by vim-markdown
+Plug 'plasticboy/vim-markdown'                                                             " markdown highlight
+Plug 'rizzatti/dash.vim'                                                                   " quick search in Dash
+Plug 'tenfyzhong/CompleteParameter.vim'                                                    " complete function parameter
+Plug 'jiangmiao/auto-pairs'                                                                " Insert or delete brackets, parens, quotes in pair.
+Plug 'tpope/vim-surround'                                                                  " quick modify surroundings
+Plug 'vim-scripts/restore_view.vim'                                                        " comeback to file last open position
+Plug 'majutsushi/tagbar'                                                                   " class outline viewer
+Plug 'szymonmaszke/vimpyter'                                                               " jupyter format
+call plug#end()
 
 source ~/.vim/vimrc_basic.vim
 source ~/.vim/vimrc_hotkey.vim
-source ~/.vim/vimrc_plugin_youdao-dict.vim
-source ~/.vim/vimrc_plugin_git-gutter.vim
-source ~/.vim/vimrc_plugin_nerd-tree.vim
-source ~/.vim/vimrc_plugin_nerd-commenter.vim
-source ~/.vim/vimrc_plugin_ctrl-p.vim
-source ~/.vim/vimrc_plugin_tagbar.vim
-" source ~/.vim/vimrc_plugin_win-manager.vim
-source ~/.vim/vimrc_plugin_ycm.vim
-source ~/.vim/vimrc_plugin_complete-parameter.vim
-source ~/.vim/vimrc_plugin_restore-view.vim
-source ~/.vim/vimrc_plugin_autopep8.vim
-" source ~/.vim/vimrc_plugin_conque-gdb.vim
 
-" open layout
-" autocmd VimEnter * TagbarToggle
-autocmd VimEnter * NERDTreeToggle
+" plugin configurations
+source ~/.vim/scripts/bufexplorer.vim
+source ~/.vim/scripts/colors-solarized.vim
+source ~/.vim/scripts/easy-align.vim
+source ~/.vim/scripts/nerd-commenter.vim
+source ~/.vim/scripts/nerd-tree.vim
+source ~/.vim/scripts/git-gutter.vim
+source ~/.vim/scripts/ctrl-p.vim
+source ~/.vim/scripts/grep.vim
+source ~/.vim/scripts/goyo.vim
+source ~/.vim/scripts/youdao-dict.vim
 
-" 自动退出 Win-manager
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+source ~/.vim/scripts/syntastic.vim
+source ~/.vim/scripts/yapf.vim
+source ~/.vim/scripts/ycm.vim
 
-" set secure " prevent autocmd
+source ~/.vim/scripts/tagbar.vim
+source ~/.vim/scripts/restore-view.vim
+source ~/.vim/scripts/functions.vim

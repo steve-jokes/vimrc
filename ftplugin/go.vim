@@ -12,7 +12,7 @@ let g:go_fmt_command = "goimports"
 function! MyGoRun()
     let cur_file = expand('%')
     " execute('!' . 'vgo run ./' . cur_file)
-    execute('below terminal zsh -c "go run ./' . cur_file. '"')
+    execute('below terminal zsh -c "GOPRIVATE=gitlab.upltv.com/* go run ./' . cur_file. '"')
     execute(':set termwinsize=10*1000')
     " execute('GoRun' . ' ./' . cur_file)
 endfunction
@@ -36,3 +36,5 @@ nnoremap <silent><leader>o :GoDebugStepOut<CR>
 
 nnoremap <buffer> <leader>gd :GoDef<CR>
 nnoremap <buffer> <leader>gi :GoInfo<CR>
+
+autocmd Filetype go nmap <buffer> <silent> <C-l> :w<CR>

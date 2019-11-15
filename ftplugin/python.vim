@@ -21,11 +21,17 @@ setlocal foldtext=NeatFoldText()
 
 let python_highlight_all = 1
 
-" beautiful python code
-" nnoremap <Leader>= :0,$!yapf<CR>
+function! OnPythonRunExit(channel, code)
+    " execute('bd')
+endfunction
 
-" rearange python import
-" nnoremap <Leader>i :!isort %<CR><CR>
+function! MyPythonRun()
+    let cur_file = expand('%')
+    call execute('set splitbelow')
+    call term_start('zsh -c "./' . cur_file . '"', {
+                \"term_rows": 10,
+                \"exit_cb": "OnPythonRunExit",
+                \})
+endfunction
 
-map <F5> <Esc>:w<CR>:!./%<CR>
-
+nmap <F5> <Esc>:w<CR>:call MyPythonRun()<CR>
