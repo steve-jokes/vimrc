@@ -29,7 +29,6 @@ function! MyPythonRun()
     let cur_file = expand('%')
     call execute('set splitbelow')
     call term_start('zsh -c "./' . cur_file . '"', {
-                \"term_rows": 10,
                 \"exit_cb": "OnPythonRunExit",
                 \})
 endfunction
