@@ -1,9 +1,11 @@
 " NERDTree
 
-let g:NERDTreeShowLineNumbers     = 0                                      " 显示行号
-let g:NERDTreeShowHidden          = 0                                      " 是否显示隐藏文件
-let g:NERDTreeIgnore              = ['\.pyc','\~$','\.swp', '__pycache__'] " 忽略一下文件的显示
-let g:NERDTreeShowBookmarks       = 0                                      " 显示书签列表
+let g:NERDTreeShowLineNumbers     = 0     " 显示行号
+let g:NERDTreeShowHidden          = 0     " 是否显示隐藏文件
+let g:NERDTreeShowBookmarks       = 1     " 显示书签列表
+let g:NERDTreeWinSize             = 40
+" 忽略一下文件的显示
+let g:NERDTreeIgnore              = ['\.pyc','\~$','\.swp', '__pycache__', '\.meta']
 let g:NERDTreeDirArrowExpandable  = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 

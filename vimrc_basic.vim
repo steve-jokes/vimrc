@@ -14,6 +14,13 @@ set autoindent           " same level indent
 set smartindent          " next level indent
 set exrc                 " enable project specified vimrc
 
+if system('uname -r') =~ "microsoft"
+    augroup Yank
+        autocmd!
+        autocmd TextYankPost * :call system('clip.exe ',@")
+    augroup END
+endif
+
 autocmd WinEnter * if &previewwindow | setlocal wrap linebreak nolist | endif " wrap on preview
 
 " Performance

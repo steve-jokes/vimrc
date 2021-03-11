@@ -25,7 +25,7 @@ Plug 'easymotion/vim-easymotion'                                                
 Plug 'yegappan/grep'                                                                       " could change into ripgrep
 Plug 'iamcco/dict.vim'                                                                     " youdao dict plugin
 Plug 'vim-syntastic/syntastic'                                                             " static syntax checking
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer' } " code complete
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --all' }                      " code complete
 Plug 'ervandew/supertab'                                                                   " super tab for ins-completion
 Plug 'mikelue/vim-maven-plugin'                                                            " maven
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }                              " auto PEP8
@@ -39,7 +39,18 @@ Plug 'tpope/vim-surround'                                                       
 Plug 'vim-scripts/restore_view.vim'                                                        " comeback to file last open position
 Plug 'majutsushi/tagbar'                                                                   " class outline viewer
 Plug 'szymonmaszke/vimpyter'                                                               " jupyter format
+Plug 'jceb/vim-orgmode'
+Plug 'itchyny/calendar.vim'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'mzlogin/vim-smali'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
+
+
+" Plug 'inkarkat/vim-mark'
 call plug#end()
+
+filetype indent plugin on
 
 source ~/.vim/vimrc_basic.vim
 source ~/.vim/vimrc_hotkey.vim
@@ -55,11 +66,18 @@ source ~/.vim/scripts/ctrl-p.vim
 source ~/.vim/scripts/grep.vim
 source ~/.vim/scripts/goyo.vim
 source ~/.vim/scripts/youdao-dict.vim
+source ~/.vim/scripts/calendar.vim
+source ~/.vim/scripts/leetcode.vim
 
 source ~/.vim/scripts/syntastic.vim
 source ~/.vim/scripts/yapf.vim
 source ~/.vim/scripts/ycm.vim
 
 source ~/.vim/scripts/tagbar.vim
+source ~/.vim/scripts/vim-go.vim
 source ~/.vim/scripts/restore-view.vim
 source ~/.vim/scripts/functions.vim
+
+let g:lua_complete_omni = 1
+" This sets the default value for all buffers.
+let g:lua_compiler_name = '/usr/bin/luac'

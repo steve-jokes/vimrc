@@ -22,8 +22,8 @@ let g:ycm_key_list_select_completion = ['<C-n>']
 let g:ycm_key_list_previous_completion = ['<C-p>']
 
 let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
-let g:ycm_server_python_interpreter='/usr/local/opt/python/libexec/bin/python'
-" let g:ycm_python_interpreter_path = '/usr/local/opt/python/libexec/bin/python'
+let g:ycm_server_python_interpreter='/usr/bin/python'
+" let g:ycm_python_interpreter_path = '/usr/bin/python'
 " let g:ycm_python_sys_path = []
 " let g:ycm_extra_conf_vim_data = [
   " \  'g:ycm_python_interpreter_path',
@@ -53,6 +53,8 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" set omnifunc=syntaxcomplete#Complete
+
 set splitbelow " show preivew below
 
 " mapping
@@ -65,6 +67,7 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Apply YCM FixIt
 map <leader>ff :YcmCompleter FixIt<CR>
+map <leader>? :YcmCompleter GetDoc<CR>
 
 " fix conflict with syntastic
 let g:syntastic_java_checkers = []

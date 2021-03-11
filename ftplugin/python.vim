@@ -17,7 +17,7 @@ function! NeatFoldText()
     return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 
-setlocal foldtext=NeatFoldText()
+setlocal foldtext=NeatFoldText
 
 let python_highlight_all = 1
 
@@ -29,9 +29,16 @@ function! MyPythonRun()
     let cur_file = expand('%')
     call execute('set splitbelow')
     call term_start('zsh -c "./' . cur_file . '"', {
-                \"term_rows": 10,
                 \"exit_cb": "OnPythonRunExit",
                 \})
 endfunction
 
 nmap <F5> <Esc>:w<CR>:call MyPythonRun()<CR>
+
+function! AddTitle()
+    call setline(1,"#!/usr/bin/env python")
+    call append(1,"# -*- coding: UTF-8 -*-")
+    call append(2,"")
+    call append(3,"if __name__ == '__main__':")
+    call append(4,"    pass")
+endf

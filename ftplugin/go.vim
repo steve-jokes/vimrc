@@ -2,12 +2,12 @@
 
 setlocal nolist
 setlocal foldmethod=syntax
-setlocal foldlevel =0
+setlocal foldlevel=0
 
 " prevent auto fold when go files are saved
-let g:go_fmt_experimental = 1
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+let g:go_fmt_experimental = 1
 
 function! MyGoRun()
     let cur_file = expand('%')

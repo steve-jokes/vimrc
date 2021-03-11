@@ -10,3 +10,12 @@ function! MyShRun()
 endfunction
 
 nmap <F5> <Esc>:w<CR>:call MyShRun()<CR>
+
+function AddTitle()
+    call setline(1,"#!/bin/bash")
+    call append(1,"#====================================================")
+    call append(2,"# Author     : memphisw")
+    call append(3,"# Create Date: " . strftime("%Y-%m-%d"))
+    call append(4,"# Description: ")
+    call append(5,"#====================================================")
+endf

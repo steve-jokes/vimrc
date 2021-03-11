@@ -10,3 +10,5 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checker_args='--ignore=E501'
 let g:syntastic_python_flake8_post_args='--ignore=E501'
+
+let g:syntastic_cs_mcs_args = '-unsafe -langversion:Experimental'
