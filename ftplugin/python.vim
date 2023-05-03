@@ -33,6 +33,9 @@ function! MyPythonRun()
                 \})
 endfunction
 
+" nmap <F2> <Esc>:w<CR>:YcmCompleter RefactorRename <c-r>=substitute(expand("<cword>"), '\(\<\u\l\+\\|\l\+\)\(\u\)', '\l\1_\l\2', 'g')<cr>
+nmap <F2> <Esc>:w<CR>:YcmCompleter RefactorRename <c-r>=substitute(expand("<cword>"), '\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)', '\l\1_\l\2', 'g')<cr>
+
 nmap <F5> <Esc>:w<CR>:call MyPythonRun()<CR>
 
 function! AddTitle()

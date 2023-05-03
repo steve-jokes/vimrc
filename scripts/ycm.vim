@@ -65,6 +65,10 @@ nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 " 左右横跳
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" 查看引用
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+" 查看类型
+nnoremap <leader>gt :YcmCompleter GetType<CR>
 " Apply YCM FixIt
 map <leader>ff :YcmCompleter FixIt<CR>
 map <leader>? :YcmCompleter GetDoc<CR>

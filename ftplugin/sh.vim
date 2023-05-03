@@ -11,7 +11,7 @@ endfunction
 
 nmap <F5> <Esc>:w<CR>:call MyShRun()<CR>
 
-function AddTitle()
+function! AddTitle()
     call setline(1,"#!/bin/bash")
     call append(1,"#====================================================")
     call append(2,"# Author     : memphisw")

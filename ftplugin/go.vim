@@ -17,6 +17,11 @@ function! MyGoRun()
     " execute('GoRun' . ' ./' . cur_file)
 endfunction
 
+function! FmtSwagger()
+    execute(':Tabularize /@\S*')
+endfunction
+
+nmap <F2> <Esc>:w<CR>:GoRename<CR>
 " nmap <F5> <Esc>:w<CR>:GoRun<CR>
 nmap <F5> <Esc>:w<CR>:call MyGoRun()<CR>
 nmap <F6> <Esc>:w<CR>:GoDebugStart<CR>
@@ -38,3 +43,8 @@ nnoremap <buffer> <leader>gd :GoDef<CR>
 nnoremap <buffer> <leader>gi :GoInfo<CR>
 
 autocmd Filetype go nmap <buffer> <silent> <C-l> :w<CR>
+
+" https://github.com/momaek/formattag
+" use for golang struct tags align
+set rtp+=$GOMODCACHE/github.com/momaek/formattag@v0.0.6/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'PrettyTag' | checktime

@@ -21,3 +21,6 @@ nmap <Leader>l <C-w>l
 
 " general reformat
 nmap <C-l> mpgg=G`p
+
+" position
+nmap zh zzLzzHkkj

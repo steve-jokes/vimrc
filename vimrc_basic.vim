@@ -13,6 +13,7 @@ set clipboard   =unnamed " use system clipboard
 set autoindent           " same level indent
 set smartindent          " next level indent
 set exrc                 " enable project specified vimrc
+set autoread
 
 if system('uname -r') =~ "microsoft"
     augroup Yank
@@ -28,7 +29,9 @@ autocmd WinEnter * if &previewwindow | setlocal wrap linebreak nolist | endif " 
 set noesckeys        " no Esc keys
 set nomodeline       " forbid modeline to save some time
 set lazyredraw       " screen will not be redrawn while executing macros, registers
-set updatetime =4000 " time of auto-save for crash-recovery
+" set updatetime =4000 " time of auto-save for crash-recovery
+set updatetime =1000 " time of auto-save for crash-recovery, also cursor hover time
+set history =500     " history for backward search
 
 " Search
 
@@ -41,6 +44,7 @@ set smartcase  " search Uppercase when Uppercase appeared in pattern
 
 set ruler                  " position of cursor
 set number                 " line number
+set nrformats =            " make ctrl-a always in decimal, origin: bin, octal, hex
 set relativenumber         " relative line number
 set list                   " show tab and empty space in the end
 set listchars  =tab:>-     " set style

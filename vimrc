@@ -45,6 +45,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'mzlogin/vim-smali'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-lua-ftplugin'
+Plug 'cespare/vim-toml'
 
 
 " Plug 'inkarkat/vim-mark'
